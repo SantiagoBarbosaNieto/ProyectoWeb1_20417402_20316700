@@ -1,3 +1,5 @@
+import { Compra } from "./compra.model";
+
 abstract class Usuario
 {
     protected nombre: string;
@@ -16,34 +18,34 @@ abstract class Usuario
     }
     
     public getNombre(): string {
-        throw new Error("Method not implemented.");
+        return this.nombre;
     }
     public setNombre(nombre: string): void {
-        throw new Error("Method not implemented.");
+        this.nombre = nombre;
     }
     public getApellido(): string {
-        throw new Error("Method not implemented.");
+        return this.apellido;
     }
     public setApellido(apellido: string): void {
-        throw new Error("Method not implemented.");
+        this.apellido = apellido;
     }
     public getCedula(): number {
-        throw new Error("Method not implemented.");
+        return this.cedula;
     }
     public setCedula(cedula: number): void {
-        throw new Error("Method not implemented.");
+        this.cedula = cedula;
     }
     public getEmail(): string {
-        throw new Error("Method not implemented.");
+        return this.email;
     }
     public setEmail(email: string): void {
-        throw new Error("Method not implemented.");
+        this.email = email;
     }
     public getContraseña(): string {
-        throw new Error("Method not implemented.");
+        return this.contraseña;
     }
     public setContraseña(contraseña: string): void {
-        throw new Error("Method not implemented.");
+        this.contraseña = contraseña;
     }
     
 }
@@ -61,10 +63,55 @@ export class Administrador extends Usuario
 
 export class Cliente extends Usuario
 {
-    constructor(nombre:string, apellido:string, cedula:number, email:string, contraseña:string)
+    private compras: Compra[];
+    constructor(nombre:string, apellido:string, cedula:number, email:string, contraseña:string, compras?:Compra[])
     {
         super(nombre, apellido, cedula, email, contraseña);
+        this.compras = compras ?? [];
     }
     
-    //TODO: Métodos únicos de cliente
+    public getCompras():Compra[]
+    {
+        return this.compras;
+    }
+
+    public setCompras(compras: Compra[]):void
+    {
+        this.compras = compras;
+    }
+
+    public agregarCompra(compra:Compra):void
+    {
+        this.compras.push(compra);
+    }
+
+    public eliminarCompra(id: number) : void
+    {
+        const cond = (compra:Compra) => compra.getId() == id;
+        let i = this.compras.findIndex(cond);
+        if(i > -1)
+            this.compras.splice(i,1)
+        //else
+            //Mensaje de no encontrado o algo así
+    }
+
+    public buscarCompraPorID(id: number) : Compra
+    {
+        const cond = (compra:Compra) => compra.getId() == id;
+        let i = this.compras.findIndex(cond);
+        if(i > -1)
+            return this.compras[i];
+        else
+            return null;
+    }
+
+    public buscarCompraPorJuegoId(idJuego: number) : Compra
+    {
+        const cond = (compra:Compra) => compra.buscarJuegoPorID(idJuego) !=  null;
+        let i = this.compras.findIndex(cond);
+        if(i > -1)
+            return this.compras[i];
+        else
+            return null;
+    }
 }
