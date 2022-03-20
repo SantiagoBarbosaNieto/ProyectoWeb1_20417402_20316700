@@ -360,3 +360,18 @@ body, html {
 		}	
 	}
 }
+
+.boton_personalizado{
+    text-decoration: none;
+    padding: 1px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #ff0000;
+    border-radius: 6px;
+    border: 2px solid #ffffff;
+  }
+  .boton_personalizado:hover{
+    color: #ff0000;
+    background-color: #ffffff;
+  }
