@@ -57,7 +57,7 @@ export class Administrador extends Usuario
         super(nombre, apellido, cedula, email, contraseña);
     }
     
-    //TODO: Métodos únicos de admin
+    //TODO: Métodos únicos de admin, no creo que tenga xd sólo es para ser identificado como admin con instanceOf
 }
 
 
