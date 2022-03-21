@@ -34,6 +34,9 @@
       <ul class="navbar-nav" *ngIf="!mostrarLogin">
         <h5>{{getNombreLogged()}}</h5>
       </ul>
+      <ul class="navbar-nav" *ngIf="!mostrarLogin">
+        <button class="btn btn-outline-dark" type="submit" (click)="logout()">Log Out</button>
+      </ul>
     </div>
   </div>
 </nav>

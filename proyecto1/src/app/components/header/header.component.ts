@@ -33,7 +33,7 @@ export class HeaderComponent implements OnInit {
 
   public actualizar()
   {
-    if(localStorage.getItem('nombre')== null)
+    if(localStorage.getItem('rol') == null || localStorage.getItem('rol') == 'visitante')
       this.mostrarLogin = true;
     else
       this.mostrarLogin = false;
@@ -47,5 +47,11 @@ export class HeaderComponent implements OnInit {
   public irALogin()
   {
     this.router.navigateByUrl('/login')
+  }
+
+  public logout()
+  {
+    localStorage.clear();
+    this.actualizar();
   }
 }
