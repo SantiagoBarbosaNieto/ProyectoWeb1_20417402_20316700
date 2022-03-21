@@ -66,12 +66,13 @@ export class HeaderComponent implements OnInit {
 
   public irALogin()
   {
-    this.router.navigateByUrl('/login')
+    this.router.navigateByUrl('/login');
   }
 
   public logout()
   {
     localStorage.clear();
     this.actualizar();
+    this.router.navigateByUrl('/login')
   }
 }

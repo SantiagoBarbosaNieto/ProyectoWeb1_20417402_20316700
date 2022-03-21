@@ -77,7 +77,7 @@ export class Compra
         let hour = a.getHours();
         let min = a.getMinutes();
         let sec = a.getSeconds();
-        let time = date + '/' + month + '/' + year + '/' + hour + ':' + min + ':' + sec ;
+        let time = date + '/' + month + '/' + year + ' ' + hour + ':' + min + ':' + sec ;
         return time;
     }
 }
