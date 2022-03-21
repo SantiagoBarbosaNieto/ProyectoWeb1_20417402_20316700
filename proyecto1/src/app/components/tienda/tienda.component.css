@@ -18,7 +18,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #0C4160;
+    background-color: #8d3c31;
     padding: 30px 10px
 }
 
@@ -46,7 +46,7 @@ p {
     align-items: center;
     justify-content: space-between;
     padding: 0 15px;
-    background-image: linear-gradient(to right, #77A1D3 0%, #79CBCA 51%, #77A1D3 100%);
+    background-image: linear-gradient(to right, #6496a5 0%, #8b826f 51%, #a8d377 100%);
     border: none;
     transition: 0.5s;
     background-size: 200% auto
@@ -63,9 +63,33 @@ p {
     transition: transform 0.2s ease-in
 }
 
+.btn.btn-secondary {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    background-image: linear-gradient(to right, #6496a5 0%, #8b826f 51%, #d38277 100%);
+    border: none;
+    transition: 0.5s;
+    background-size: 200% auto
+}
+
+.btn.btn.btn-secondary:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none
+}
+
+.btn.btn-secondary:hover .fas.fa-arrow-right {
+    transform: translate(15px);
+    transition: transform 0.2s ease-in
+}
+
 .form-control {
     color: white;
-    background-color: #223C60;
+    background-color: #cecece;
     border: 2px solid transparent;
     height: 60px;
     padding-left: 20px;
@@ -74,8 +98,8 @@ p {
 
 .form-control:focus {
     color: white;
-    background-color: #0C4160;
-    border: 2px solid #2d4dda;
+    background-color: #ccaaaa;
+    border: 2px solid #9da6cc;
     box-shadow: none
 }
 
