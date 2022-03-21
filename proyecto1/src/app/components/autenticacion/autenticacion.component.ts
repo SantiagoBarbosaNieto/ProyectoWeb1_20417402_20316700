@@ -109,19 +109,18 @@ export class AutenticacionComponent implements OnInit {
       return;
     }
 
-    if(usuario.getContraseña() != this.auxL.password)
+    if(usuario.contraseña != this.auxL.password)
     {
       alert("Email o contraseña no correctos");
       return;
     }
 
     
-    localStorage.setItem('nombre',usuario.getNombre());
-    localStorage.setItem('apellido', usuario.getApellido());
-    localStorage.setItem('email', usuario.getEmail());
-    localStorage.setItem('cedula', usuario.getCedula().toString());
-    debugger;
-    localStorage.setItem('recordarme', this.auxL.recordarme.toString());
+    localStorage.setItem('nombre',usuario.nombre);
+    localStorage.setItem('apellido', usuario.apellido);
+    localStorage.setItem('email', usuario.email);
+    localStorage.setItem('cedula', usuario.cedula.toString());
+    localStorage.setItem('recordarme', 'false'); //Cuando haya backend y esto sirva de algo: this.auxL.recordarme.toString()
     if( usuario instanceof Administrador)
       localStorage.setItem('rol',"administrador");
     if(usuario instanceof Cliente)

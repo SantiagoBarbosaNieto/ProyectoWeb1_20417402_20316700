@@ -1,11 +1,11 @@
 export class Juego
 {
-    private id: number;
-    private precio: number;
-    private nombre: string;
-    private nombreEstudio: string;
-    private descripcion: string;
-    private dirImgPreviw: string
+    private _id: number;
+    private _precio: number;
+    private _nombre: string;
+    private _nombreEstudio: string;
+    private _descripcion: string;
+    private _dirImgPreviw: string;
 
     constructor(id: number, precio: number, nombre: string, nombreEstudio: string, descripcion: string, dirImgPreviw: string)
     {
@@ -17,36 +17,41 @@ export class Juego
         this.dirImgPreviw = dirImgPreviw;
     }
 
-    public getId(): number
-    {
-        return this.id;
+    
+    public get id(): number {
+        return this._id;
     }
-    public setId(id:number): void
-    {
-        this.id = id;
+    public set id(value: number) {
+        this._id = value;
     }
-    public getPrecio(): number
-    {
-        return this.precio;
+    public get precio(): number {
+        return this._precio;
     }
-    public setPrecio(precio:number): void
-    {
-        this.precio = precio;
+    public set precio(value: number) {
+        this._precio = value;
     }
-    public getNombre():string
-    {
-        return this.nombre;
-    } 
-    public setNombre(nombre:string): void
-    {
-        this.nombre = nombre;
+    public get nombre(): string {
+        return this._nombre;
     }
-    public getNombreEstudio():string
-    {
-        return this.nombre;
-    } 
-    public setNombreEstudio(nombre:string): void
-    {
-        this.nombre = nombre;
+    public set nombre(value: string) {
+        this._nombre = value;
+    }
+    public get nombreEstudio(): string {
+        return this._nombreEstudio;
+    }
+    public set nombreEstudio(value: string) {
+        this._nombreEstudio = value;
+    }
+    public get descripcion(): string {
+        return this._descripcion;
+    }
+    public set descripcion(value: string) {
+        this._descripcion = value;
+    }
+    public get dirImgPreviw(): string {
+        return this._dirImgPreviw;
+    }
+    public set dirImgPreviw(value: string) {
+        this._dirImgPreviw = value;
     }
 }

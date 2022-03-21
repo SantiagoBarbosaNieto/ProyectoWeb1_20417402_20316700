@@ -2,11 +2,11 @@ import { Compra } from "./compra.model";
 
 export abstract class Usuario
 {
-    protected nombre: string;
-    protected apellido: string;
-    protected cedula: number;
-    protected email: string;
-    protected contraseña: string;
+    private _nombre: string;
+    private _apellido: string;
+    private _cedula: number;
+    private _email: string;
+    private _contraseña: string;
 
     constructor(nombre:string, apellido:string, cedula:number, email:string, contraseña:string)
     {
@@ -17,35 +17,36 @@ export abstract class Usuario
         this.contraseña = contraseña;
     }
     
-    public getNombre(): string {
-        return this.nombre;
+    
+    public get nombre(): string {
+        return this._nombre;
     }
-    public setNombre(nombre: string): void {
-        this.nombre = nombre;
+    public set nombre(value: string) {
+        this._nombre = value;
     }
-    public getApellido(): string {
-        return this.apellido;
+    public get apellido(): string {
+        return this._apellido;
     }
-    public setApellido(apellido: string): void {
-        this.apellido = apellido;
+    public set apellido(value: string) {
+        this._apellido = value;
     }
-    public getCedula(): number {
-        return this.cedula;
+    public get cedula(): number {
+        return this._cedula;
     }
-    public setCedula(cedula: number): void {
-        this.cedula = cedula;
+    public set cedula(value: number) {
+        this._cedula = value;
     }
-    public getEmail(): string {
-        return this.email;
+    public get email(): string {
+        return this._email;
     }
-    public setEmail(email: string): void {
-        this.email = email;
+    public set email(value: string) {
+        this._email = value;
     }
-    public getContraseña(): string {
-        return this.contraseña;
+    public get contraseña(): string {
+        return this._contraseña;
     }
-    public setContraseña(contraseña: string): void {
-        this.contraseña = contraseña;
+    public set contraseña(value: string) {
+        this._contraseña = value;
     }
     
 }
@@ -87,7 +88,7 @@ export class Cliente extends Usuario
 
     public eliminarCompra(id: number) : void
     {
-        const cond = (compra:Compra) => compra.getId() == id;
+        const cond = (compra:Compra) => compra.id == id;
         let i = this.compras.findIndex(cond);
         if(i > -1)
             this.compras.splice(i,1)
@@ -97,7 +98,7 @@ export class Cliente extends Usuario
 
     public buscarCompraPorID(id: number) : Compra
     {
-        const cond = (compra:Compra) => compra.getId() == id;
+        const cond = (compra:Compra) => compra.id == id;
         let i = this.compras.findIndex(cond);
         if(i > -1)
             return this.compras[i];

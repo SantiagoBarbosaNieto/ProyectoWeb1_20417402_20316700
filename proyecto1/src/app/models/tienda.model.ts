@@ -2,9 +2,9 @@ import { Juego } from "./juego.model";
 
 export class Tienda
 {
-    private nombre: string;
-    private id: number;
-    private juegos: Juego[];
+    private _nombre: string;
+    private _id: number;
+    private _juegos: Juego[];
 
 
     constructor(nombre: string, id:number)
@@ -13,24 +13,23 @@ export class Tienda
         this.id = id;
     }
 
-    public getNombre(): string
-    {
-        return this.nombre;
+    public get nombre(): string {
+        return this._nombre;
     }
-
-    public setNombre(nombre: string): void
-    {
-        this.nombre = nombre;
+    public set nombre(value: string) {
+        this._nombre = value;
     }
-
-    public getId(): number
-    {
-        return this.id;
+    public get id(): number {
+        return this._id;
     }
-
-    public setId(id: number): void
-    {
-        this.id = id;
+    public set id(value: number) {
+        this._id = value;
+    }
+    public get juegos(): Juego[] {
+        return this._juegos;
+    }
+    public set juegos(value: Juego[]) {
+        this._juegos = value;
     }
 
     public agregarJuego(juego: Juego) : void
@@ -40,7 +39,7 @@ export class Tienda
 
     public eliminarJuego(id: number) : void
     {
-        const cond = (juego:Juego) => juego.getId() == id;
+        const cond = (juego:Juego) => juego.id == id;
         let i = this.juegos.findIndex(cond);
         if(i > -1)
             this.juegos.splice(i,1)
@@ -50,7 +49,7 @@ export class Tienda
 
     public buscarJuegoPorID(id: number) : Juego
     {
-        const cond = (juego:Juego) => juego.getId() == id;
+        const cond = (juego:Juego) => juego.id == id;
         let i = this.juegos.findIndex(cond);
         if(i > -1)
             return this.juegos[i];
@@ -60,7 +59,7 @@ export class Tienda
 
     public modificarJuego(juego : Juego)
     {
-        const cond = (juego:Juego) => juego.getId() == juego.getId();
+        const cond = (juego:Juego) => juego.id == juego.id;
         let i = this.juegos.findIndex(cond);
         if(i > -1)
             this.juegos.splice(i,1,juego);

@@ -22,12 +22,12 @@ export class UsuariosService {
 
   eliminarUsuario(cedula:number) //Sirtve buscar en ambas al tiempo por que no se podrá tener una cuenta cliente y admin con la misma cédula
   {
-    const condC = (cliente:Cliente) => cliente.getCedula() == cedula;
+    const condC = (cliente:Cliente) => cliente.cedula == cedula;
     let i = this.listaClientes.findIndex(condC);
     if(i > -1)
       this.listaClientes.splice(i,1) 
 
-    const condA = (admin:Administrador) => admin.getCedula() == cedula;
+    const condA = (admin:Administrador) => admin.cedula == cedula;
     i = this.listaAdmins.findIndex(condA);
     if(i > -1)
       this.listaAdmins.splice(i,1) 
@@ -35,13 +35,13 @@ export class UsuariosService {
 
   buscarUsuario(cedula: number): Usuario
   {
-    const condC = (cliente:Cliente) => cliente.getCedula() == cedula;
+    const condC = (cliente:Cliente) => cliente.cedula == cedula;
     let c = this.listaClientes.find(condC);
     if(c != null)
       return c;
     else
     {
-      const condA = (admin:Administrador) => admin.getCedula() == cedula;
+      const condA = (admin:Administrador) => admin.cedula == cedula;
       let a = this.listaAdmins.find(condA);
       if(a != null)
         return a;
@@ -52,13 +52,13 @@ export class UsuariosService {
 
   buscarUsuarioPorEmail(email: string): Usuario
   {
-    const condC = (cliente:Cliente) => cliente.getEmail() == email;
+    const condC = (cliente:Cliente) => cliente.email == email;
     let c = this.listaClientes.find(condC);
     if(c != null)
       return c;
     else
     {
-      const condA = (admin:Administrador) => admin.getEmail() == email;
+      const condA = (admin:Administrador) => admin.email == email;
       let a = this.listaAdmins.find(condA);
       if(a != null)
         return a;

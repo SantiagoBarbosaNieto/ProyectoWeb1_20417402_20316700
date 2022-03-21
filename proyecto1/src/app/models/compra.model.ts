@@ -3,11 +3,11 @@ import { Cliente } from "./usuario.model";
 
 export class Compra
 {
-    private id: number;
-    private cliente: Cliente;
-    private fechaTimestamp: string;
-    private total: number;
-    private juegos: Juego[];
+    private _id: number;
+    private _cliente: Cliente;
+    private _fechaTimestamp: string;
+    private _total: number;
+    private _juegos: Juego[];
     
     constructor(id:number, cliente:Cliente, fechaTimestamp: string, total?:number, juegos?:Juego[])
     {
@@ -18,51 +18,43 @@ export class Compra
         this.juegos = juegos ?? [];
     }
 
-    public getId():number
-    {
-        return this.id;
-    }
     
-    public setId(id:number):void
-    {
-        this.id = id;
+    public get id(): number {
+        return this._id;
     }
-
-    public getCliente():Cliente
-    {
-        return this.cliente;
+    public set id(value: number) {
+        this._id = value;
     }
-
-    public setCliente(cliente:Cliente):void
-    {
-        this.cliente = cliente;
+    public get cliente(): Cliente {
+        return this._cliente;
     }
-
-    public getFechaTimestamp():string 
-    {
-        return this.fechaTimestamp;
+    public set cliente(value: Cliente) {
+        this._cliente = value;
     }
-
-    public setFechaTimestamp(fechaTimestamp:string):void
-    {
-        this.fechaTimestamp = fechaTimestamp;
+    public get fechaTimestamp(): string {
+        return this._fechaTimestamp;
     }
-
-    public getTotal():number
-    {
-        return this.total;
+    public set fechaTimestamp(value: string) {
+        this._fechaTimestamp = value;
     }
-
-    public setTotal(total: number):void
-    {
-        this.total = total;
+    public get total(): number {
+        return this._total;
+    }
+    public set total(value: number) {
+        this._total = value;
+    }
+    public get juegos(): Juego[] {
+        return this._juegos;
+    }
+    public set juegos(value: Juego[]) {
+        this._juegos = value;
     }
 
     public calcularTotal():void
     {
         let tot = 0;
         this.juegos.forEach(juego => {
-            tot += juego.getPrecio();
+            tot += juego.precio;
         } )
 
         //Si se necesita clacular impuestos, descuentos, etc, aqui.
@@ -87,7 +79,7 @@ export class Compra
 
     public eliminarJuego(id: number) : void
     {
-        const cond = (juego:Juego) => juego.getId() == id;
+        const cond = (juego:Juego) => juego.id == id;
         let i = this.juegos.findIndex(cond);
         if(i > -1)
             this.juegos.splice(i,1)
@@ -97,7 +89,7 @@ export class Compra
 
     public buscarJuegoPorID(id: number) : Juego
     {
-        const cond = (juego:Juego) => juego.getId() == id;
+        const cond = (juego:Juego) => juego.id == id;
         let i = this.juegos.findIndex(cond);
         if(i > -1)
             return this.juegos[i];
