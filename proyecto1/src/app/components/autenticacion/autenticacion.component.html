@@ -1,21 +1,31 @@
 <div class="d-flex justify-content-center align-items-center mt-5">
     <div class="card">
+        
         <h1>LOGIN</h1>
-        <div class="form px-4 pt-5"> 
-            <input type="text" name="" class="form-control" placeholder="Email o Usuario"> 
-            <input type="password" name="" class="form-control" placeholder="Contraseña"> 
-            <button class="btn btn-dark btn-block">Login</button>
-        </div>
+        <form>
+            <div class="form px-4 pt-5"> 
+                <input type="text" id="usuarioLog" name="usuarioLog" class="form-control" required [(ngModel)]="auxL.email" placeholder="Email" >
+                    
+                <input required type="password" id="contraseñaLog" name="contraseñaLog" class="form-control" placeholder="Contraseña" [(ngModel)]="auxL.password" /> 
+                <input type="submit" value="Login" class="btn btn-dark btn-block" (click)="login()"/>
+            </div>
+        </form>
+        
     </div>
     <div class="card">
         <h1>SIGN UP</h1>
         <div class="form px-4">
-            <input type="text" name="" class="form-control" placeholder="Nombre"> 
-            <input type="text" name="" class="form-control" placeholder="Usuario"> 
-            <input type="text" name="" class="form-control" placeholder="Email"> 
-            <input type="text" name="" class="form-control" placeholder="Celular"> 
-            <input type="password" name="" class="form-control" placeholder="Contraseña"> 
-            <button class="btn btn-dark btn-block">Signup</button>
+            <input type="text" name="txt-su-nombre" class="form-control" placeholder="Nombre" [(ngModel)]="auxS.nombre"> 
+            <input type="text" name="txt-su-apellido" class="form-control" placeholder="Apellido" [(ngModel)]="auxS.apellido"> 
+            <input type="text" name="txt-su-email" class="form-control" placeholder="Email" [(ngModel)]="auxS.email"> 
+            <input type="text" name="num-su-cedula" class="form-control" placeholder="Cedula" [(ngModel)]="auxS.cedula"> 
+            <input type="password" name="txt-su-contraseña" class="form-control" placeholder="Contraseña" [(ngModel)]="auxS.password"> 
+            <select class="form-select" aria-label="Default select example" [(ngModel)]="auxS.rol">
+                <option value="1">Cliente</option>
+                <option value="2">Administrador</option>
+            </select>
+            <br>
+            <input type="button" value="Sign Up" class="btn btn-dark btn-block" (click)="signup()">
         </div>
     </div>
 </div>

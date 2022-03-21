@@ -1,6 +1,6 @@
 import { Compra } from "./compra.model";
 
-abstract class Usuario
+export abstract class Usuario
 {
     protected nombre: string;
     protected apellido: string;
