@@ -38,7 +38,10 @@
   <h1> Gracias por su compra!</h1>
 </ul>
 <ul  class="navbar-nav" *ngIf="esAdmin">
-  <a routerLink="/CRUD" class="card-link">Añadir juego</a>
+  <div class="flex-column">
+    <button class="btn-primary">Añadir Juego</button>
+    <button class="btn-primary">Reporte de Ventas</button>
+  </div>
   <!-- TODO: Actualizar ruta para pantalla de CRUD de juego-->
 </ul>
 <div class="container">
@@ -56,7 +59,7 @@
             <input type="button" class="btn-primary" value="Comprar" (click)="seleccionarJuego(juego.id)">
           </ul>
           <ul  class="navbar-nav" *ngIf="esAdmin">
-            <a routerLink="/CRUD" class="card-link">Modificar</a>
+            <button class="btn-primary">Modificar</button>
             <!-- TODO: Actualizar ruta para pantalla de CRUD de juego-->
           </ul>
         </div>
