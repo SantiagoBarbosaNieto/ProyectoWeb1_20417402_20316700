@@ -14,6 +14,7 @@ export class AutenticacionComponent implements OnInit {
 
   public auxL:AuxLogin = new AuxLogin();
   public auxS:AuxSignup = new AuxSignup();
+  public mySwitch:boolean = true;
 
   ngOnInit(): void {
     localStorage.setItem("rol", "visitante");
@@ -117,6 +118,10 @@ export class AutenticacionComponent implements OnInit {
     
     localStorage.setItem('nombre',usuario.getNombre());
     localStorage.setItem('apellido', usuario.getApellido());
+    localStorage.setItem('email', usuario.getEmail());
+    localStorage.setItem('cedula', usuario.getCedula().toString());
+    debugger;
+    localStorage.setItem('recordarme', this.auxL.recordarme.toString());
     if( usuario instanceof Administrador)
       localStorage.setItem('rol',"administrador");
     if(usuario instanceof Cliente)
@@ -130,6 +135,7 @@ class AuxLogin
   constructior(){}
   public email:string;
   public password:string;
+  public recordarme:boolean = true;
 }
 
 class AuxSignup

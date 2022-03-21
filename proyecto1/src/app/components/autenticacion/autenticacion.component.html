@@ -5,12 +5,14 @@
         <form>
             <div class="form px-4 pt-5"> 
                 <input type="text" id="usuarioLog" name="usuarioLog" class="form-control" required [(ngModel)]="auxL.email" placeholder="Email" >
-                    
                 <input required type="password" id="contraseñaLog" name="contraseñaLog" class="form-control" placeholder="Contraseña" [(ngModel)]="auxL.password" /> 
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox"  id="flexSwitchCheckDefault" [(ngModel)]="auxL.recordarme" [ngModelOptions]="{standalone: true}">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Recordarme?</label>
+                </div>
                 <input type="submit" value="Login" class="btn btn-dark btn-block" (click)="login()"/>
             </div>
         </form>
-        
     </div>
     <div class="card">
         <h1>SIGN UP</h1>
