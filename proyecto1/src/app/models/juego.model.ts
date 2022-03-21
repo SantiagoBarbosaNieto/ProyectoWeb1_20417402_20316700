@@ -1,6 +1,6 @@
 export class Juego
 {
-    private static idCount:number;
+    private static idCount:number = 0;
     private _id: number;
     private _precio: number;
     private _nombre: string;

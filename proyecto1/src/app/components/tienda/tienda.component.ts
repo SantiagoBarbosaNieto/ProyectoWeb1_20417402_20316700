@@ -17,6 +17,8 @@ export class TiendaComponent implements OnInit {
   public mostrarCompra:boolean;
   public compraRealizada:boolean;
   public juegoSelected:Juego = null;
+
+  public auxP:AuxP = new AuxP();
   constructor(private router:Router, public _tiendaService:TiendaService, public _usuariosService:UsuariosService) 
   { 
     this.router.events.subscribe((event: Event) => {
@@ -58,13 +60,47 @@ export class TiendaComponent implements OnInit {
   public seleccionarJuego(id:number):void
   {
     this.juegoSelected = this._tiendaService.buscarJuego(id);
-    this.mostrarCompra = true;
-    this.compraRealizada = false;
-    localStorage.setItem('mostrarCompra', this.mostrarCompra.toString());
-    window.scroll(0,0);
+    if(this.juegoSelected != null)
+    {
+      this.mostrarCompra = true;
+      this.compraRealizada = false;
+      localStorage.setItem('mostrarCompra', this.mostrarCompra.toString());
+      window.scroll(0,0);
+
+    }
   }
 
   private checkFormPago():boolean {
+    if(this.auxP.nombre == undefined ||this.auxP.nombre == "" )
+    {
+      alert("Debe ingresar un nombre");
+      return false;
+    }
+    if(this.auxP.tarjeta == undefined || this.auxP.tarjeta == "")
+    {
+      alert("Debe ingresar un número de tarjeta");
+      return false;
+    }
+    if(isNaN(Number(this.auxP.tarjeta)))
+    {
+      alert("Debe ingresar un número de tarjeta válido");
+      return false;
+    }
+    if(this.auxP.exp == undefined || this.auxP.exp == "")
+    {
+      alert("Debe ingresar una fecha de expiración");
+      return false;
+    }
+    if(this.auxP.cvv == undefined || this.auxP.cvv == "")
+    {
+      alert("Debe ingresar el código de seguridad de la tarjeta");
+      return false;
+    }
+    if(isNaN(Number(this.auxP.cvv)))
+    {
+      alert("Debe ingresar un código de seguridad válido");
+      return false;
+    }
     return true;
   }
   public comprarJuego():void
@@ -84,9 +120,10 @@ export class TiendaComponent implements OnInit {
       compra.juego = this.juegoSelected;
       compra.calcularTotal();
       cliente.agregarCompra(compra);
-      debugger;
       this.compraRealizada = true;
       this.mostrarCompra = false;
+
+      alert("Su compra ha sido registrada con éxito");
     }
   }
 
@@ -95,4 +132,14 @@ export class TiendaComponent implements OnInit {
     this.juegoSelected = null;
     this.mostrarCompra = false;
   }
+}
+
+class AuxP 
+{
+  constructor(){
+  }
+  public nombre: string;
+  public tarjeta: string;
+  public exp: string;
+  public cvv: string;
 }

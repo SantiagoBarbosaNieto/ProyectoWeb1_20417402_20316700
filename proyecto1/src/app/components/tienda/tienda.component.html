@@ -5,22 +5,22 @@
     <div class="row gx-3">
       <div class="col-12">
         <div class="d-flex flex-column">
-          <p class="text mb-1">Nombre</p> <input class="form-control mb-3" type="text" placeholder="Nombre">
+          <p class="text mb-1">Nombre</p> <input required class="form-control mb-3" id="txtNombreT" name="txtNombreT" type="text" placeholder="Nombre" [(ngModel)]="auxP.nombre"/>
         </div>
       </div>
       <div class="col-12">
         <div class="d-flex flex-column">
-          <p class="text mb-1">Número de tarjeta</p> <input class="form-control mb-3" type="text" placeholder="1234 5678 435678">
+          <p class="text mb-1">Número de tarjeta</p> <input required class="form-control mb-3" type="text" placeholder="1234 5678 435678" [(ngModel)]="auxP.tarjeta" >
         </div>
       </div>
       <div class="col-6">
         <div class="d-flex flex-column">
-          <p class="text mb-1">Fecha de expiración</p> <input class="form-control mb-3" type="text" placeholder="MM/YYYY">
+          <p class="text mb-1">Fecha de expiración</p> <input required class="form-control mb-3" type="text" placeholder="MM/YYYY" [(ngModel)]="auxP.exp" >
         </div>
       </div>
       <div class="col-6">
         <div class="d-flex flex-column">
-          <p class="text mb-1">CVV/CVC</p> <input class="form-control mb-3 pt-2 " type="password" placeholder="***">
+          <p class="text mb-1">CVV/CVC</p> <input required maxlength="3"  minlength="3" class="form-control mb-3 pt-2 " type="password" placeholder="***"  [(ngModel)]="auxP.cvv">
         </div>
       </div>
       <div class="col-12">
