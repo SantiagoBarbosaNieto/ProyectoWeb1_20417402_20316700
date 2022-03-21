@@ -6,7 +6,7 @@ import { Juego } from '../models/juego.model';
 })
 export class TiendaService {
 
-  public juegos: Juego[] = [];
+  private _juegos: Juego[] = [];
   constructor() {
     //Test juegos
     let j = new Juego(1,10.5,"Elden Ring", "Bandai Namco", "Souls-like game", "/assets/elden-ring.jpg");
@@ -44,4 +44,20 @@ export class TiendaService {
     j = new Juego(1,10.5,"Elden Ring", "Bandai Namco", "Souls-like game", "/assets/elden-ring.jpg");
     this.juegos.push(j);
    }
+
+  public get juegos(): Juego[] {
+    return this._juegos;
+  }
+  public set juegos(value: Juego[]) {
+    this._juegos = value;
+  }
+
+  public buscarJuego(id:number):Juego
+  {
+    const cond = (juego:Juego) => juego.id == id;
+    return this.juegos.find(cond);
+  }
+  
+
+
 }

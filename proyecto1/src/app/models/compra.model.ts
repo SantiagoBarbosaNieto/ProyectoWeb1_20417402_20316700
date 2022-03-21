@@ -7,15 +7,15 @@ export class Compra
     private _cliente: Cliente;
     private _fechaTimestamp: string;
     private _total: number;
-    private _juegos: Juego[];
+    private _juego: Juego;
     
-    constructor(id:number, cliente:Cliente, fechaTimestamp: string, total?:number, juegos?:Juego[])
+    constructor(id:number, cliente:Cliente, fechaTimestamp: string, total?:number, juego?:Juego)
     {
         this.id = id;
         this.cliente = cliente;
         this.fechaTimestamp = fechaTimestamp;
         this.total = total ?? 0;
-        this.juegos = juegos ?? [];
+        this.juego = juego ?? null;
     }
 
     
@@ -43,59 +43,28 @@ export class Compra
     public set total(value: number) {
         this._total = value;
     }
-    public get juegos(): Juego[] {
-        return this._juegos;
+    public get juego(): Juego {
+        return this._juego;
     }
-    public set juegos(value: Juego[]) {
-        this._juegos = value;
+    public set juego(value: Juego) {
+        this._juego = value;
     }
 
     public calcularTotal():void
     {
-        let tot = 0;
-        this.juegos.forEach(juego => {
-            tot += juego.precio;
-        } )
-
         //Si se necesita clacular impuestos, descuentos, etc, aqui.
 
-        this.total = tot;
+        this.total = this.juego.precio;
     }
 
-    public getJuegos():Juego[]
+    public getJuego():Juego
     {
-        return this.juegos;
+        return this.juego;
     }
 
-    public setJuegos(juegos: Juego[]):void
+    public setJuego(juego: Juego):void
     {
-        this.juegos = juegos;
+        this.juego = juego;
     }
-
-    public agregarJuego(juego: Juego):void
-    {
-        this.juegos.push(juego);
-    }
-
-    public eliminarJuego(id: number) : void
-    {
-        const cond = (juego:Juego) => juego.id == id;
-        let i = this.juegos.findIndex(cond);
-        if(i > -1)
-            this.juegos.splice(i,1)
-        //else
-            //Mensaje de no encontrado o algo así
-    }
-
-    public buscarJuegoPorID(id: number) : Juego
-    {
-        const cond = (juego:Juego) => juego.id == id;
-        let i = this.juegos.findIndex(cond);
-        if(i > -1)
-            return this.juegos[i];
-        else
-            return null;
-    }
-
 
 }

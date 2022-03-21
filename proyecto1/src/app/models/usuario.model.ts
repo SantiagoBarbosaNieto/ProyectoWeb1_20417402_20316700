@@ -108,7 +108,7 @@ export class Cliente extends Usuario
 
     public buscarCompraPorJuegoId(idJuego: number) : Compra
     {
-        const cond = (compra:Compra) => compra.buscarJuegoPorID(idJuego) !=  null;
+        const cond = (compra:Compra) => compra.juego.id ==  idJuego;
         let i = this.compras.findIndex(cond);
         if(i > -1)
             return this.compras[i];
