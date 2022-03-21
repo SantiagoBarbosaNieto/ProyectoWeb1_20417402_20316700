@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router, Event, NavigationStart, NavigationEnd, NavigationError } from '@angular/router';
 import { Compra } from 'src/app/models/compra.model';
 import { Juego } from 'src/app/models/juego.model';
-import { Cliente } from 'src/app/models/usuario.model';
+import { Administrador, Cliente } from 'src/app/models/usuario.model';
+import { Venta } from 'src/app/models/venta.model';
 import { TiendaService } from 'src/app/services/tienda.service';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 
@@ -122,6 +123,12 @@ export class TiendaComponent implements OnInit {
       cliente.agregarCompra(compra);
       this.compraRealizada = true;
       this.mostrarCompra = false;
+
+      let admin:Administrador = this._usuariosService.buscarAdminPorEmail(localStorage.getItem('email'));
+      let venta:Venta = new Venta(admin,Date.now());
+      venta.juego = this.juegoSelected;
+      admin.agregarVenta(venta);
+    
 
       alert("Su compra ha sido registrada con éxito");
     }
