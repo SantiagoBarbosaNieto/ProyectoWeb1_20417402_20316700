@@ -3,15 +3,17 @@ import { Cliente } from "./usuario.model";
 
 export class Compra
 {
+    public static idCount: number = 0;
     private _id: number;
     private _cliente: Cliente;
-    private _fechaTimestamp: string;
+    private _fechaTimestamp: number;
     private _total: number;
     private _juego: Juego;
     
-    constructor(id:number, cliente:Cliente, fechaTimestamp: string, total?:number, juego?:Juego)
+    constructor( cliente:Cliente, fechaTimestamp: number, total?:number, juego?:Juego)
     {
-        this.id = id;
+        Compra.idCount++;
+        this.id = Compra.idCount;
         this.cliente = cliente;
         this.fechaTimestamp = fechaTimestamp;
         this.total = total ?? 0;
@@ -31,10 +33,10 @@ export class Compra
     public set cliente(value: Cliente) {
         this._cliente = value;
     }
-    public get fechaTimestamp(): string {
+    public get fechaTimestamp(): number {
         return this._fechaTimestamp;
     }
-    public set fechaTimestamp(value: string) {
+    public set fechaTimestamp(value: number) {
         this._fechaTimestamp = value;
     }
     public get total(): number {
@@ -52,8 +54,6 @@ export class Compra
 
     public calcularTotal():void
     {
-        //Si se necesita clacular impuestos, descuentos, etc, aqui.
-
         this.total = this.juego.precio;
     }
 

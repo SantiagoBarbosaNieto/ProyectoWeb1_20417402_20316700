@@ -24,7 +24,7 @@
         </div>
       </div>
       <div class="col-12">
-        <div class="btn btn-primary mb-3"> <span class="ps-3">${{juegoSelected.precio}} COP</span> <span class="fas fa-arrow-right"></span>
+        <div class="btn btn-primary mb-3" (click)="comprarJuego()"> <span class="ps-3">Comprar por: ${{juegoSelected.precio}} COP</span> <span class="fas fa-arrow-right"></span>
         </div>
       </div>
       <div class="col-12">
@@ -33,6 +33,13 @@
       </div>
     </div>
   </div>
+</ul>
+<ul *ngIf="compraRealizada">
+  <h1> Gracias por su compra!</h1>
+</ul>
+<ul  class="navbar-nav" *ngIf="esAdmin">
+  <a routerLink="/CRUD" class="card-link">Añadir juego</a>
+  <!-- TODO: Actualizar ruta para pantalla de CRUD de juego-->
 </ul>
 <div class="container">
   <div class="row">
@@ -43,9 +50,10 @@
         <div class="card-body">
           <h5 class="card-title">{{juego.nombre}}</h5>
           <h6 class="card-subtitle mb-2 text-muted">${{juego.precio}}</h6>
+          <p class="card-text">Desarrollado por {{juego.nombreEstudio}}</p>
           <p class="card-text">{{juego.descripcion}}</p>
           <ul class="card-link" *ngIf="!esAdmin">
-            <input type="button" class="btn-primary" value="Comprar" (click)="comprarJuego(juego.id)">
+            <input type="button" class="btn-primary" value="Comprar" (click)="seleccionarJuego(juego.id)">
           </ul>
           <ul  class="navbar-nav" *ngIf="esAdmin">
             <a routerLink="/CRUD" class="card-link">Modificar</a>

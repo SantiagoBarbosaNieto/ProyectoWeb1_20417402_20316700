@@ -58,15 +58,22 @@ export class AutenticacionComponent implements OnInit {
       alert("Debe escoger un rol");
       return false;
     }
-    if(this._usuarioService.buscarUsuario(Number(this.auxS.cedula)) != null)
+    if(this.auxS.rol == 1)
     {
-      alert("Usuario ya registrado con esta Cedula");
-      return false;
+      if(this._usuarioService.buscarUsuario(Number(this.auxS.cedula)) != null)
+      {
+        alert("Usuario ya registrado con esta Cedula");
+        return false;
+      }
+      if(this._usuarioService.buscarUsuarioPorEmail(this.auxS.email) != null)
+      {
+        alert("Usuario ya registrado con este email");
+        return false;
+      }
     }
-    if(this._usuarioService.buscarUsuarioPorEmail(this.auxS.email) != null)
+    else if(this.auxS.rol == 2)
     {
-      alert("Usuario ya registrado con este email");
-      return false;
+
     }
     return true;
   }
@@ -120,7 +127,7 @@ export class AutenticacionComponent implements OnInit {
     localStorage.setItem('apellido', usuario.apellido);
     localStorage.setItem('email', usuario.email);
     localStorage.setItem('cedula', usuario.cedula.toString());
-    localStorage.setItem('recordarme', 'false'); //Cuando haya backend y esto sirva de algo: this.auxL.recordarme.toString()
+    localStorage.setItem('recordarme', 'false'); //TODO: cuando haya backend y esto sirva de algo: this.auxL.recordarme.toString()
     if( usuario instanceof Administrador)
       localStorage.setItem('rol',"administrador");
     if(usuario instanceof Cliente)

@@ -9,39 +9,39 @@ export class TiendaService {
   private _juegos: Juego[] = [];
   constructor() {
     //Test juegos
-    let j = new Juego(1,10.5,"Elden Ring", "Bandai Namco", "Souls-like game", "/assets/elden-ring.jpg");
+    let j = new Juego(10.5,"Elden Ring", "Bandai Namco", "Souls-like game", "/assets/elden-ring.jpg");
     this.juegos.push(j);
-    j = new Juego(2,13.5,"Fortnite", "Epic Games", "trash game", "/assets/fortnite.jfif");
+    j = new Juego(13.5,"Fortnite", "Epic Games", "trash game", "/assets/fortnite.jfif");
     this.juegos.push(j);
-    j = new Juego(2,13.5,"Fortnite", "Epic Games", "trash game", "/assets/fortnite2.jfif");
+    j = new Juego(13.5,"Fortnite", "Epic Games", "trash game", "/assets/fortnite2.jfif");
     this.juegos.push(j);
-    j = new Juego(2,13.5,"Fortnite", "Epic Games", "trash game", "");
+    j = new Juego(13.5,"Fortnite", "Epic Games", "trash game", "/assets/fortnite.jfif");
     this.juegos.push(j);
-    j = new Juego(2,13.5,"Fortnite", "Epic Games", "trash game", "");
+    j = new Juego(13.5,"Fortnite", "Epic Games", "trash game", "/assets/fortnite.jfif");
     this.juegos.push(j);
-    j = new Juego(2,13.5,"Fortnite", "Epic Games", "trash game", "");
+    j = new Juego(13.5,"Fortnite", "Epic Games", "trash game", "/assets/fortnite.jfif");
     this.juegos.push(j);
-    j = new Juego(2,13.5,"Fortnite", "Epic Games", "trash game", "/assets/fortnite.jfif");
+    j = new Juego(13.5,"Fortnite", "Epic Games", "trash game", "/assets/fortnite.jfif");
     this.juegos.push(j);
-    j = new Juego(2,13.5,"Fortnite", "Epic Games", "trash game", "/assets/fortnite2.jfif");
+    j = new Juego(13.5,"Fortnite", "Epic Games", "trash game", "/assets/fortnite2.jfif");
     this.juegos.push(j);
-    j = new Juego(2,13.5,"Fortnite", "Epic Games", "trash game", "/assets/fortnite.jfif");
+    j = new Juego(13.5,"Fortnite", "Epic Games", "trash game", "/assets/fortnite.jfif");
     this.juegos.push(j);
-    j = new Juego(2,13.5,"Fortnite", "Epic Games", "trash game", "/assets/fortnite2.jfif");
+    j = new Juego(13.5,"Fortnite", "Epic Games", "trash game", "/assets/fortnite2.jfif");
     this.juegos.push(j);
-    j = new Juego(1,10.5,"Elden Ring", "Bandai Namco", "Souls-like game", "/assets/elden-ring.jpg");
+    j = new Juego(10.5,"Elden Ring", "Bandai Namco", "Souls-like game", "/assets/elden-ring.jpg");
     this.juegos.push(j);
-    j = new Juego(2,13.5,"Fortnite", "Epic Games", "trash game", "/assets/fortnite.jfif");
+    j = new Juego(13.5,"Fortnite", "Epic Games", "trash game", "/assets/fortnite.jfif");
     this.juegos.push(j);
-    j = new Juego(2,13.5,"Fortnite", "Epic Games", "trash game", "/assets/fortnite2.jfif");
+    j = new Juego(13.5,"Fortnite", "Epic Games", "trash game", "/assets/fortnite2.jfif");
     this.juegos.push(j);
-    j = new Juego(1,10.5,"Elden Ring", "Bandai Namco", "Souls-like game", "/assets/elden-ring.jpg");
+    j = new Juego(10.5,"Elden Ring", "Bandai Namco", "Souls-like game", "/assets/elden-ring.jpg");
     this.juegos.push(j);
-    j = new Juego(2,13.5,"Fortnite", "Epic Games", "trash game", "/assets/fortnite.jfif");
+    j = new Juego(13.5,"Fortnite", "Epic Games", "trash game", "/assets/fortnite.jfif");
     this.juegos.push(j);
-    j = new Juego(2,13.5,"Fortnite", "Epic Games", "trash game", "/assets/fortnite2.jfif");
+    j = new Juego(13.5,"Fortnite", "Epic Games", "trash game", "/assets/fortnite2.jfif");
     this.juegos.push(j);
-    j = new Juego(1,10.5,"Elden Ring", "Bandai Namco", "Souls-like game", "/assets/elden-ring.jpg");
+    j = new Juego(10.5,"Elden Ring", "Bandai Namco", "Souls-like game", "/assets/elden-ring.jpg");
     this.juegos.push(j);
    }
 

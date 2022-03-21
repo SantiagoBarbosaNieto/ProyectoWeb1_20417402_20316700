@@ -66,4 +66,41 @@ export class UsuariosService {
         return null;
     }
   }
+
+  buscarCliente(cedula: number): Cliente
+  {
+    const condC = (cliente:Cliente) => cliente.cedula == cedula;
+    let c = this.listaClientes.find(condC);
+    if(c != null)
+      return c;
+    return null;
+  }
+
+  buscarAdmin(cedula:number):Administrador
+  {
+    const condA = (admin:Administrador) => admin.cedula == cedula;
+    let a = this.listaAdmins.find(condA);
+    if(a != null)
+      return a;
+    else
+      return null;
+  }
+
+  buscarClientePorEmail(email: string): Cliente
+  {
+    const condC = (cliente:Cliente) => cliente.email == email;
+    let c = this.listaClientes.find(condC);
+    if(c != null)
+      return c;
+    return null;
+  }
+
+  buscarAdminPorEmail(email:string):Administrador
+  {
+    const condA = (admin:Administrador) => admin.email == email;
+    let a = this.listaAdmins.find(condA);
+    if(a != null)
+      return a;
+    return null;
+  }
 }

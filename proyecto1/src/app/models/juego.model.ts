@@ -1,5 +1,6 @@
 export class Juego
 {
+    private static idCount:number;
     private _id: number;
     private _precio: number;
     private _nombre: string;
@@ -7,9 +8,10 @@ export class Juego
     private _descripcion: string;
     private _dirImgPreviw: string;
 
-    constructor(id: number, precio: number, nombre: string, nombreEstudio: string, descripcion: string, dirImgPreviw: string)
+    constructor( precio: number, nombre: string, nombreEstudio: string, descripcion: string, dirImgPreviw: string)
     {
-        this.id = id;
+        Juego.idCount++;
+        this.id = Juego.idCount;
         this.precio = precio;
         this.nombre = nombre;
         this.nombreEstudio = nombreEstudio;
