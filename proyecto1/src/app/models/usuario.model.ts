@@ -64,21 +64,20 @@ export class Administrador extends Usuario
 
 export class Cliente extends Usuario
 {
-    private compras: Compra[];
+    private _compras: Compra[];
     constructor(nombre:string, apellido:string, cedula:number, email:string, contraseña:string, compras?:Compra[])
     {
         super(nombre, apellido, cedula, email, contraseña);
         this.compras = compras ?? [];
     }
     
-    public getCompras():Compra[]
-    {
-        return this.compras;
+    
+    public get compras(): Compra[] {
+        return this._compras;
     }
-
-    public setCompras(compras: Compra[]):void
-    {
-        this.compras = compras;
+    
+    public set compras(value: Compra[]) {
+        this._compras = value;
     }
 
     public agregarCompra(compra:Compra):void

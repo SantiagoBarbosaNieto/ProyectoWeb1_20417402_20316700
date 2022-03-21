@@ -8,12 +8,19 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" routerLink="">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
+        <ul *ngIf="esCliente">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/compras">Historial Compras</a>
+          </li>
+        </ul>
+        <ul *ngIf="esAdmin">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/ventas">Reporte Ventas</a> <!--TODO: Actualizar con ruta de componente ventas-->
+          </li>
+        </ul>
+        <!-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown
           </a>
@@ -26,15 +33,15 @@
         </li>
         <li class="nav-item">
           <a class="nav-link disabled">Disabled</a>
-        </li>
+        </li> -->
       </ul>
-      <ul class="navbar-nav" *ngIf="mostrarLogin">
+      <ul class="navbar-nav" *ngIf="esVisitante">
         <button class="btn btn-outline-dark" type="submit" (click)="irALogin()">Login/Signup</button>
       </ul>
-      <ul class="navbar-nav" *ngIf="!mostrarLogin">
+      <ul class="navbar-nav" *ngIf="!esVisitante">
         <h5>{{getNombreLogged()}}</h5>
       </ul>
-      <ul class="navbar-nav" *ngIf="!mostrarLogin">
+      <ul class="navbar-nav" *ngIf="!esVisitante">
         <button class="btn btn-outline-dark" type="submit" (click)="logout()">Log Out</button>
       </ul>
     </div>

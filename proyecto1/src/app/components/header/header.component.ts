@@ -8,7 +8,9 @@ import { Router, Event, NavigationStart, NavigationEnd, NavigationError } from '
 })
 export class HeaderComponent implements OnInit {
 
-  public mostrarLogin:boolean = false;
+  public esCliente:boolean = false;
+  public esAdmin: boolean = false;
+  public esVisitante: boolean = true;
   constructor( private router: Router) { 
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationStart) {
@@ -27,16 +29,34 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     if(localStorage.getItem('recordarme')=='false')
       localStorage.clear();
-    if(localStorage.getItem('nombre')== null)
-      this.mostrarLogin = true;
+    if(localStorage.getItem('rol')== null || localStorage.getItem('rol')=='visitante')
+    {
+      this.esVisitante = true;
+      this.esAdmin= false;
+      this.esCliente = false;
+    }  
   }
 
   public actualizar()
   {
     if(localStorage.getItem('rol') == null || localStorage.getItem('rol') == 'visitante')
-      this.mostrarLogin = true;
-    else
-      this.mostrarLogin = false;
+    {
+      this.esVisitante = true;
+      this.esCliente = false;
+      this.esAdmin = false;
+    }
+    else if(localStorage.getItem('rol') == 'administrador') 
+    {
+      this.esCliente = false;
+      this.esVisitante = false;
+      this.esAdmin = true;
+    }
+    else if(localStorage.getItem('rol') == 'cliente') 
+    {
+      this.esCliente = true;
+      this.esVisitante = false;
+      this.esAdmin = false;
+    }
     
   }
   public getNombreLogged():string

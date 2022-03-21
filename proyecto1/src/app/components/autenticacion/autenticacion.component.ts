@@ -58,22 +58,15 @@ export class AutenticacionComponent implements OnInit {
       alert("Debe escoger un rol");
       return false;
     }
-    if(this.auxS.rol == 1)
+    if(this._usuarioService.buscarUsuario(Number(this.auxS.cedula)) != null)
     {
-      if(this._usuarioService.buscarUsuario(Number(this.auxS.cedula)) != null)
-      {
-        alert("Usuario ya registrado con esta Cedula");
-        return false;
-      }
-      if(this._usuarioService.buscarUsuarioPorEmail(this.auxS.email) != null)
-      {
-        alert("Usuario ya registrado con este email");
-        return false;
-      }
+      alert("Usuario ya registrado con esta Cedula");
+      return false;
     }
-    else if(this.auxS.rol == 2)
+    if(this._usuarioService.buscarUsuarioPorEmail(this.auxS.email) != null)
     {
-
+      alert("Usuario ya registrado con este email");
+      return false;
     }
     return true;
   }
