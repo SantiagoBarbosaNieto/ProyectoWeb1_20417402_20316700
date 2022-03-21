@@ -3,12 +3,13 @@ import { RouterModule } from '@angular/router';
 import { AutenticacionComponent } from './components/autenticacion/autenticacion.component';
 import { ComprasComponent } from './components/compras/compras.component';
 import { TiendaComponent } from './components/tienda/tienda.component';
+import { ProductoComponent } from './components/producto/producto.component';
 
 const routes = [
   {path: 'login', component: AutenticacionComponent},
   {path: '', component: TiendaComponent},
   {path: 'compras', component: ComprasComponent},
-  {path: '**', component: TiendaComponent}
+  {path: 'anadir', component:ProductoComponent}
 ]
 
 
