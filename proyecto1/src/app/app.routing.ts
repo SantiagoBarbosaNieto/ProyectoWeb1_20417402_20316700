@@ -9,7 +9,8 @@ const routes = [
   {path: 'login', component: AutenticacionComponent},
   {path: '', component: TiendaComponent},
   {path: 'compras', component: ComprasComponent},
-  {path: 'anadir', component:ProductoComponent}
+  {path: 'anadir', component:ProductoComponent},
+  {path: '**', component:TiendaComponent}
 ]
 
 
