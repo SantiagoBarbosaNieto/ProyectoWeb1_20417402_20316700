@@ -46,7 +46,7 @@ p {
     align-items: center;
     justify-content: space-between;
     padding: 0 15px;
-    background-image: linear-gradient(to right, #6496a5 0%, #8b826f 51%, #a8d377 100%);
+    background-image: linear-gradient(to right, #6496a5 0%, #979285 51%, #a8d377 100%);
     border: none;
     transition: 0.5s;
     background-size: 200% auto
@@ -70,7 +70,7 @@ p {
     align-items: center;
     justify-content: space-between;
     padding: 0 15px;
-    background-image: linear-gradient(to right, #6496a5 0%, #8b826f 51%, #d38277 100%);
+    background-image: linear-gradient(to right, #6496a5 0%, #979285 51%, #d38277 100%);
     border: none;
     transition: 0.5s;
     background-size: 200% auto
