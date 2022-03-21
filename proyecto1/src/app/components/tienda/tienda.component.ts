@@ -132,6 +132,11 @@ export class TiendaComponent implements OnInit {
     this.juegoSelected = null;
     this.mostrarCompra = false;
   }
+  
+  public irAnadir():void
+  {
+    this.router.navigateByUrl('/anadir');
+  }
 }
 
 class AuxP 

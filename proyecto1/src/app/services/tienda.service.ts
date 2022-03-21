@@ -6,7 +6,7 @@ import { Juego } from '../models/juego.model';
 })
 export class TiendaService {
 
-  private _juegos: Juego[] = [];
+  public _juegos: Juego[] = [];
   constructor() {
     //Test juegos
     let j = new Juego(10.5,"Elden Ring", "Bandai Namco", "Souls-like game", "/assets/elden-ring.jpg");
@@ -58,6 +58,4 @@ export class TiendaService {
     return this.juegos.find(cond);
   }
   
-
-
 }

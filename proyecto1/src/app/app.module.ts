@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app.routing';
 import { ComprasComponent } from './components/compras/compras.component';
 import { FormsModule } from '@angular/forms';
 import { TiendaComponent } from './components/tienda/tienda.component';
+import { ProductoComponent } from './components/producto/producto.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { TiendaComponent } from './components/tienda/tienda.component';
     HeaderComponent,
     AutenticacionComponent,
     ComprasComponent,
-    TiendaComponent
+    TiendaComponent,
+    ProductoComponent
   ],
   imports: [
     BrowserModule,
