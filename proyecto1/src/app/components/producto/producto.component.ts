@@ -54,6 +54,7 @@ export class ProductoComponent implements OnInit {
     {
       this.nuevoJuegoAgregar = new Juego(this.precioNuevo,this.nombreNuevo,this.nuevoAutor,this.nuevoDescripcion,"/assets/elden-ring.jpg");
       this._tiendaService._juegos.push(this.nuevoJuegoAgregar);
+      alert("Se ha agredado el Juego");
       this.iraTienda();
     }
   }
