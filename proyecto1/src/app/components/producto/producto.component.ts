@@ -52,7 +52,7 @@ export class ProductoComponent implements OnInit {
 
     if(this.correcto == true)
     {
-      this.nuevoJuegoAgregar = new Juego(this.precioNuevo,this.nuevoAutor,this.nombreNuevo,this.nuevoDescripcion,"/assets/elden-ring.jpg");
+      this.nuevoJuegoAgregar = new Juego(this.precioNuevo,this.nombreNuevo,this.nuevoAutor,this.nuevoDescripcion,"/assets/elden-ring.jpg");
       this._tiendaService._juegos.push(this.nuevoJuegoAgregar);
       this.iraTienda();
     }
