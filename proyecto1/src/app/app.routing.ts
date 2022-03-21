@@ -5,9 +5,10 @@ import { ComprasComponent } from './components/compras/compras.component';
 import { TiendaComponent } from './components/tienda/tienda.component';
 
 const routes = [
-  {path: '', component: AutenticacionComponent},
-  {path: 'tienda', component: TiendaComponent},
-  {path: 'compras', component: ComprasComponent}
+  {path: 'login', component: AutenticacionComponent},
+  {path: '', component: TiendaComponent},
+  {path: 'compras', component: ComprasComponent},
+  {path: '**', component: TiendaComponent}
 ]
 
 

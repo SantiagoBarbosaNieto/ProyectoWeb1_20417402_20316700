@@ -125,7 +125,7 @@ export class AutenticacionComponent implements OnInit {
       localStorage.setItem('rol',"administrador");
     if(usuario instanceof Cliente)
       localStorage.setItem('rol',"cliente");
-    this.router.navigateByUrl('/tienda');
+    this.router.navigateByUrl('/');
   }
 }
 

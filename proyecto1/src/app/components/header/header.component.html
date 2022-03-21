@@ -28,9 +28,12 @@
           <a class="nav-link disabled">Disabled</a>
         </li>
       </ul>
-      <button class="btn btn-outline-dark" type="submit">Login</button>
-      <br>
-      <button class="btn btn-outline-dark" type="submit">Sigup</button>
+      <ul class="navbar-nav" *ngIf="mostrarLogin">
+        <button class="btn btn-outline-dark" type="submit" (click)="irALogin()">Login/Signup</button>
+      </ul>
+      <ul class="navbar-nav" *ngIf="!mostrarLogin">
+        <h5>{{getNombreLogged()}}</h5>
+      </ul>
     </div>
   </div>
 </nav>
