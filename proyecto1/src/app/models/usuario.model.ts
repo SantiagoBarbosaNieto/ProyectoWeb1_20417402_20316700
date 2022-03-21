@@ -1,4 +1,5 @@
 import { Compra } from "./compra.model";
+import { Juego } from "./juego.model";
 
 export abstract class Usuario
 {
@@ -53,10 +54,14 @@ export abstract class Usuario
 
 export class Administrador extends Usuario
 {
+    private juegosAnadidos:Juego[];
     constructor(nombre:string, apellido:string, cedula:number, email:string, contraseña:string)
     {
         super(nombre, apellido, cedula, email, contraseña);
+        this.juegosAnadidos = this.juegosAnadidos ?? [];
     }
+
+
     
     //TODO: Métodos únicos de admin, no creo que tenga xd sólo es para ser identificado como admin con instanceOf
 }

@@ -2,15 +2,13 @@
 <div class="d-flex justify-content-center align-items-center mt-5">
     <div class="form px-4">
         <h4>Nombre del Juego</h4>
-        <input type="text">
+        <input type="text" class="form" id="txt-nombre" placeholder="Nombre del Juego" [(ngModel)]="nombreNuevo">
         <h4>Precio</h4>
-        <input type="number">
+        <input type="text" class="form" id="txt-precio" placeholder="Precio del Juego" [(ngModel)]="precioNuevo">
+        <h4>Desarrolladora</h4>
+        <input type="text" class="form" id="txt-precio" placeholder="Compañia Desarrolladora" [(ngModel)]="nuevoAutor">
         <h4>Descripcion</h4>
-        <textarea name="Descripcion" rows="10" cols="40"></textarea>
+        <textarea name="Descripcion" rows="10" cols="40" placeholder="Descripcion del Juego" [(ngModel)]="nuevoDescripcion"></textarea>
     </div>
-    <h4>Portada</h4>
-    <div class="form px-4">
-        <input type="file" >
-    </div>
+    <button class="btn-primary" (click)="publicarJuego()">Publicar</button>
 </div>
-<button class="btn-primary">Publicar</button>
