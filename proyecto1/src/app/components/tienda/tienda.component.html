@@ -2,6 +2,7 @@
   <br>
   <div class="card px-4">
     <p class="h8 py-3">Detalles de compra</p>
+    <p class="h10 py-3">Item: {{juegoSelected.nombre}} - Valor: ${{juegoSelected.precio}} COP</p>
     <div class="row gx-3">
       <div class="col-12">
         <div class="d-flex flex-column">
@@ -28,7 +29,7 @@
         </div>
       </div>
       <div class="col-12">
-        <div class="btn btn-primary mb-3" (click)="cancelarCompra()"> <span class="ps-3">Cancelar</span> <span class="fas fa-arrow-right"></span>
+        <div class="btn btn-secondary mb-3" (click)="cancelarCompra()"> <span class="ps-3">Cancelar</span> <span class="fas fa-arrow-right"></span>
         </div>
       </div>
     </div>
