@@ -12,6 +12,7 @@ const routes = [
   {path: 'compras', component: ComprasComponent},
   {path: 'ventas', component:VentasComponent},
   {path: 'anadir', component:ProductoComponent},
+  {path: 'modificar', component:TiendaComponent},
   {path: '**', component:TiendaComponent}
 ]
 

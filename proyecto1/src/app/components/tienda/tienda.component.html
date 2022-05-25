@@ -62,8 +62,8 @@
             <input type="button" class="btn-primary" value="Comprar" (click)="seleccionarJuego(juego.id)">
           </ul>
           <ul  class="navbar-nav" *ngIf="esAdmin">
-            <button class="btn-primary" value="Modificar">Modificar</button>
-            <button class="btn-primary" value="Eliminar">Eliminar</button>
+            <button class="btn-primary" value="Modificar" (click)="irModificar(juego.id)">Modificar</button>
+            <button class="btn-primary" value="Eliminar" (click)="eliminarJuego()">Eliminar</button>
             <!-- TODO: Actualizar ruta para pantalla de CRUD de juego-->
           </ul>
         </div>

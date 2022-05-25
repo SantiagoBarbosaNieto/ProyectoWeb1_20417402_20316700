@@ -144,6 +144,16 @@ export class TiendaComponent implements OnInit {
   {
     this.router.navigateByUrl('/anadir');
   }
+
+  public irModificar(id:number):void
+  {
+    this.router.navigateByUrl('/modificar');
+  }
+
+  public eliminarJuego():void
+  {
+
+  }
 }
 
 class AuxP 

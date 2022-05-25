@@ -25,7 +25,13 @@ export class TiendaService {
   public buscarJuego(id:number):Juego
   {
     const cond = (juego:Juego) => juego.id == id;
-    return this.juegos.find(cond);
+    splice(this.juegos.find(cond));
+  }
+
+  public eliminarJuego(id:number):void
+  {
+    const cond = (juego:Juego) => juego.id == id;
+    delete this.juegos.find(cond);
   }
   
 }
