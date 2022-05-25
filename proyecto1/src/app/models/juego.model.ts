@@ -56,4 +56,12 @@ export class Juego
     public set dirImgPreviw(value: string) {
         this._dirImgPreviw = value;
     }
+
+    public actualizarJuego(precio: number, nombre: string, nombreEstudio: string, descripcion: string, dirImgPreviw: string){
+        this.precio = precio;
+        this.nombre = nombre;
+        this.nombreEstudio = nombreEstudio;
+        this.descripcion = descripcion;
+        this.dirImgPreviw = dirImgPreviw;
+    }
 }
